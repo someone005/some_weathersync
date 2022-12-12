@@ -3,8 +3,8 @@ Config = {}
 Config.APIkey = '' -- get it from https://www.weatherapi.com/my/
 Config.City = ''
 
-Config.NightStart = 22
-Config.NightEnd = 6
+Config.NightStart = 22 -- start syncing weather for night
+Config.NightEnd = 6 -- start syncing weather for day
 
 Config.Updates = {
     '0:00',
