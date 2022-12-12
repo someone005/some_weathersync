@@ -33,7 +33,7 @@ Config.Updates = {
     '23:00'
 }
 
-Config.Weathers = { -- u can change this for your own risk but I think it's good (https://www.weatherapi.com/docs/weather_conditions.json)
+Config.Weathers = { -- u can change this for your own but I think it's good (https://www.weatherapi.com/docs/weather_conditions.json)
     {
         code = 1000,
         day = "sunny",
