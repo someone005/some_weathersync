@@ -113,7 +113,7 @@ function checkPermissions(src)
     return IsPlayerAceAllowed(src, "weatherSyncSettings")
 end
 
-RegisterSeverEvent('some_weathersync:beginUpdate')
+RegisterServerEvent('some_weathersync:beginUpdate')
 AddEventHandler('some_weathersync:beginUpdate', function(source)
     Update()
 end)
