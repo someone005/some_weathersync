@@ -10,3 +10,5 @@ Script Commands:
     /resumeWeatherSync
     /setSyncingCity (it will set new city but if typed city wont exist script will return error that city is not correct)
     /syncWeather
+
+Author discord: https://discord.gg/AsNeccHmct
