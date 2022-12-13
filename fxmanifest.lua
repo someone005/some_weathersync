@@ -5,7 +5,7 @@ lua54 'yes'
 
 author 'someone#0005'
 description 'Simple script to sync weather with specific city setted in script config'
-version '1.3'
+version '1.3.1'
 
 client_scripts {
     'client.lua'
@@ -13,9 +13,5 @@ client_scripts {
 
 server_scripts {
     'server.lua',
-    'config.lua'
-}
-
-escraw_ignore {
     'config.lua'
 }
