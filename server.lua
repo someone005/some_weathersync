@@ -47,19 +47,11 @@ function checkErrorCode(err)
     elseif err == 400 then
         print('City name is wrong! Please fix it')
         return false
-    elseif err == 1005 then
-        print('Something went wrong. Please contact someone#0005. Error: 1005')
-        print('Something went wrong. Please contact someone#0005. Error: 1005')
-        return false
-    elseif err == 2007 then
+    elseif err == 403 then
         print('Your api key has exceeded calls per month quota')
         return false
-    elseif err == 2008 then
+    elseif err == 403 then
         print('Your api key has been disabled!')
-        return false
-    elseif err == 9999 then
-        print('Something went wrong. Please contact someone#0005. Error: 9999')
-        print('Something went wrong. Please contact someone#0005. Error: 9999')
         return false
     else
         return true
