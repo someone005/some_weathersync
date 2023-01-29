@@ -20,7 +20,7 @@ Citizen.CreateThread(function()
 end)
 
 function Update()
-    local link = 'http://api.weatherapi.com/v1/current.json?key=' .. Config.APIkey .. '&q=' .. Config.City .. '&aqi=no'
+    local link = 'http://api.weatherapi.com/v1/current.json?key=' .. Config.APIkey .. '&q=' .. Config.City
     PerformHttpRequest(link, function(err, result, headers)
         if checkErrorCode(err) then
             local r = '[ ' .. result .. ' ]'
@@ -41,10 +41,10 @@ function Update()
 end
 
 function checkErrorCode(err)
-    if err == 1002 or err == 2006 then
+    if err == 401 then
         print('Your api key is wrong! Please fix it')
         return false
-    elseif err == 1003 or err == 1006 then
+    elseif err == 400 then
         print('City name is wrong! Please fix it')
         return false
     elseif err == 1005 then
