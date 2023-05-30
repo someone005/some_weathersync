@@ -1,19 +1,26 @@
 local syncing = true
 
 Citizen.CreateThread(function()
+    updated = false
     while true do
 
-        if syncing then
-            local hour, minute = os.date("%H"), os.date("%M")
+        if not updated then
+            if syncing then
+                local hour, minute = os.date("%H"), os.date("%M")
 
-            for i=1, #Config.Updates, 1 do
-                local time = Config.Updates[i]
-                if tonumber(hour) == tonumber(string.sub(time, 1, 2)) then
-                    if tonumber(minute) == tonumber(string.sub(time, 4, 5)) then
-                        Update()
+                for i=1, #Config.Updates, 1 do
+                    local time = Config.Updates[i]
+                    if tonumber(hour) == tonumber(string.sub(time, 1, 2)) then
+                        if tonumber(minute) == tonumber(string.sub(time, 4, 5)) then
+                            Update()
+                            updated = true
+                        end
                     end
                 end
             end
+        else
+            Wait(65000)
+            updated = false
         end
         Citizen.Wait(1000)
     end
