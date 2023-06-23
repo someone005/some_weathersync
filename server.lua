@@ -33,7 +33,6 @@ function Update()
             local r = '[ ' .. result .. ' ]'
             local rt = json.decode(r)
             local hour = tonumber(string.sub(rt[1].current.last_updated, 12, 13))
-            TriggerClientEvent('some_weathersync:UpdateTime', -1, hour, string.sub(rt[1].location.localtime, 15, 16))
             for i=1, #Config.Weathers, 1 do
                 if Config.Weathers[i].code == rt[1].current.condition.code then
                     if hour >= Config.NightStart or hour <= Config.NightEnd then
